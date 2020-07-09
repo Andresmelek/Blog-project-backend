@@ -88,3 +88,14 @@ Role.find({where:{name: 'admin'}}, (err, role) => {
 }
 });
       
+app.models.Role.find({where: {name: 'editor'}}, (err, roles) => {
+  if (!err && roles) {
+    if(roles.length === 0) {
+      app.models.Role.create({
+        name: 'editor',
+      }, (creationErr, result) => {
+        console.log('creation error or result', creationErr, result);
+      })
+    }
+  }
+}, )

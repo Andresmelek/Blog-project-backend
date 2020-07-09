@@ -27,8 +27,14 @@
       "foreignKey": "userId"
     },
     "Post": {
-      "type":"hasMany",
+      "type": "hasMany",
       "model": "Post",
+      "foreignKey": ""
+    },
+
+    "PostImage":{
+      "type":"hasMany",
+      "model": "PostImage",
       "foreignKey": ""
     }
   },
