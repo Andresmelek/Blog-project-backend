@@ -12,13 +12,13 @@ module.exports = function(PostImage) {
       fs.mkdirSync('./server/storage/' + ctx.req.params.container);
     }
 
-    /*PostImage.find({where: {postId: post_id}}, (fer, files) => {
+    PostImage.find({where: {postId: post_id}}, (fer, files) => {
       if (fer && files) {
         files.map(file => {
           file.updateAttributes({postId: null});
         })
       }
-    })*/
+    })
 
     PostImage.app.models.ImageFile.upload(ctx.req, ctx.result, options, (err, file) => {
       if (err) {
